@@ -1,6 +1,7 @@
 const { validator, schemaLogin } = require('../utils/schema');
 
-function validationSale(req, res, next) {
+function validationLogin(req, res, next) {
+  console.log('Entrou na validação');
   const { email, password } = req.body;
   const result = validator(schemaLogin, { email, password });
   if (result.message) {
@@ -9,4 +10,4 @@ function validationSale(req, res, next) {
   next();
 }
 
-module.exports = { validationSale };
+module.exports = { validationLogin };
