@@ -4,7 +4,7 @@ const schemaLogin = joi.object().keys({
   email: joi.string().email().required().messages({
     'string.empty': 'Some required fields are missing',
   }),
-  password: joi.string().min(8).required().messages({
+  password: joi.string().required().messages({
     'string.empty': 'Some required fields are missing',
   }),
 });
