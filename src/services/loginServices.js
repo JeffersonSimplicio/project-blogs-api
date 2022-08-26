@@ -13,7 +13,11 @@ async function login({ email, password }) {
     expiresIn: '1d',
     algorithm: 'HS256',
   };
-  const token = jwt.sign({ data: user.email }, secret, jwtConfig);
+  const token = jwt.sign(
+    { email: user.email, user: user.displayName },
+    secret,
+    jwtConfig,
+  );
 
   return { token };
 }
