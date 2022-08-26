@@ -1,4 +1,3 @@
-// const jwt = require('jsonwebtoken');
 const { User } = require('../database/models');
 
 async function create({ displayName, email, password, image }) {
