@@ -32,8 +32,6 @@ async function getById(id) {
   return user;
 }
 
-getById(7).then((test) => console.log(test));
-
 module.exports = {
   create,
   getAll,
