@@ -22,7 +22,20 @@ async function getAll() {
   return users;
 }
 
+async function getById(id) {
+  const user = await User.findByPk(id, {
+    attributes: { exclude: ['password'] },
+  });
+  if (!user) {
+    return { message: 'User does not exist' };
+  }
+  return user;
+}
+
+getById(7).then((test) => console.log(test));
+
 module.exports = {
   create,
   getAll,
+  getById,
 };
