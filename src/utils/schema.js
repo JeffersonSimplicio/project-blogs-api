@@ -16,6 +16,10 @@ const schemaUser = joi.object().keys({
   image: joi.string().required(),
 });
 
+const schemaCategory = joi.object().keys({
+  name: joi.string().required(),
+});
+
 function validator(schema, body) {
   const negocio = schema.validate(body);
   if (negocio.error) {
@@ -30,4 +34,5 @@ module.exports = {
   validator,
   schemaLogin,
   schemaUser,
+  schemaCategory,
 };
