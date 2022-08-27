@@ -10,6 +10,12 @@ async function create(req, res) {
   res.status(201).json({ token: result });
 }
 
+async function getAll(req, res) {
+  const result = await userService.getAll();
+  res.status(200).json(result);
+}
+
 module.exports = {
   create,
+  getAll,
 };
