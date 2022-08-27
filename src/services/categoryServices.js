@@ -13,6 +13,12 @@ async function create(name) {
   return category;
 }
 
+async function getAll() {
+  const users = await Category.findAll();
+  return users;
+}
+
 module.exports = {
   create,
+  getAll,
 };
