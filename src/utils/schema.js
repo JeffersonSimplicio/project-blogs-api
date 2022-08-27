@@ -4,9 +4,16 @@ const schemaLogin = joi.object().keys({
   email: joi.string().email().required().messages({
     'string.empty': 'Some required fields are missing',
   }),
-  password: joi.string().required().messages({
+  password: joi.string().min(6).required().messages({
     'string.empty': 'Some required fields are missing',
   }),
+});
+
+const schemaUser = joi.object().keys({
+  displayName: joi.string().min(8).required(),
+  email: joi.string().email().required(),
+  password: joi.string().min(6).required(),
+  image: joi.string().required(),
 });
 
 function validator(schema, body) {
@@ -22,4 +29,5 @@ function validator(schema, body) {
 module.exports = {
   validator,
   schemaLogin,
+  schemaUser,
 };
