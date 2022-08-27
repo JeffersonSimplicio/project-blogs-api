@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken');
 const { User } = require('../database/models');
+const tokenGenerator = require('../utils/tokenGenerator');
 
 async function login({ email, password }) {
   const user = await User.findOne({ where: { email } });
@@ -8,16 +8,7 @@ async function login({ email, password }) {
     return { message: 'Invalid fields' };
   }
 
-  const secret = process.env.JWT_SECRET || 'suaSenhaSecreta';
-  const jwtConfig = {
-    expiresIn: '1d',
-    algorithm: 'HS256',
-  };
-  const token = jwt.sign(
-    { email: user.email, user: user.displayName },
-    secret,
-    jwtConfig,
-  );
+  const token = tokenGenerator({ email: user.email, user: user.displayName });
 
   return { token };
 }
