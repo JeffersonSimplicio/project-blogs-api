@@ -15,5 +15,6 @@ router.post(
   rescue(validation.validationCategory),
   rescue(categoryController.create),
 );
+router.get('/', categoryController.getAll);
 
 module.exports = router;
