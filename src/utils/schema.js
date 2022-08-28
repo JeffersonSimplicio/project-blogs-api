@@ -31,9 +31,8 @@ const schemaPost = joi.object().keys({
     'any.required': missingField,
     'string.empty': missingField,
   }),
-  categoryIds: joi.string().required().messages({
+  categoryIds: joi.array().required().messages({
     'any.required': missingField,
-    'string.empty': missingField,
   }),
 });
 
