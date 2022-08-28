@@ -18,4 +18,6 @@ router.post(
   rescue(postController.create),
 );
 
+router.get('/', rescue(postController.getAll));
+
 module.exports = router;
