@@ -19,5 +19,6 @@ router.post(
 );
 
 router.get('/', rescue(postController.getAll));
+router.get('/:id', rescue(postController.getById));
 
 module.exports = router;
