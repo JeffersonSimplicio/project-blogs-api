@@ -5,12 +5,12 @@ const router = express.Router();
 const rescue = require('../utils/rescue');
 
 const validateJWT = require('../middlewares/auth/validateJWT');
-const validation = require('../middlewares/validationUser');
+const { validationUser } = require('../middlewares/validationUser');
 const userController = require('../controller/userController');
 
 router.post(
   '/',
-  rescue(validation.validationUser),
+  rescue(validationUser),
   rescue(userController.create),
 );
 
