@@ -14,11 +14,21 @@ async function create(name) {
 }
 
 async function getAll() {
-  const users = await Category.findAll();
+  const categories = await Category.findAll();
+  return categories;
+}
+
+async function getByIds(ids) {
+  const users = await Category.findAll({
+    where: {
+      Id: ids,
+    },
+  });
   return users;
 }
 
 module.exports = {
   create,
   getAll,
+  getByIds,
 };
