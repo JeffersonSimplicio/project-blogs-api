@@ -20,6 +20,23 @@ const schemaCategory = joi.object().keys({
   name: joi.string().required(),
 });
 
+const missingField = 'Some required fields are missing';
+
+const schemaPost = joi.object().keys({
+  title: joi.string().required().messages({
+    'any.required': missingField,
+    'string.empty': missingField,
+  }),
+  content: joi.string().required().messages({
+    'any.required': missingField,
+    'string.empty': missingField,
+  }),
+  categoryIds: joi.string().required().messages({
+    'any.required': missingField,
+    'string.empty': missingField,
+  }),
+});
+
 function validator(schema, body) {
   const negocio = schema.validate(body);
   if (negocio.error) {
@@ -35,4 +52,5 @@ module.exports = {
   schemaLogin,
   schemaUser,
   schemaCategory,
+  schemaPost,
 };
