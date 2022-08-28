@@ -17,6 +17,8 @@ async function validateJWT(req, res, next) {
 
     if (!user) return res.status(401).json({ message: 'Expired or invalid token' });
 
+    res.locals.user = user;
+
     next();
   } catch (error) {
     return res.status(401).json({ message: 'Expired or invalid token' });
