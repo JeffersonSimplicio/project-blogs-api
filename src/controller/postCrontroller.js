@@ -38,9 +38,21 @@ async function update(req, res) {
   res.status(200).json(result);
 }
 
+async function remove(req, res) {
+  const { id } = req.params;
+  const { user: { id: userId } } = res.locals;
+  const result = await postServices.remove(id, userId);
+  if (result.message) {
+    if (result.message.includes('user')) return res.status(401).json(result);
+    return res.status(404).json(result);
+  }
+  res.status(204).end();
+}
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
+  remove,
 };
