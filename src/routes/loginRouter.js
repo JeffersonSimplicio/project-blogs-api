@@ -4,12 +4,12 @@ const router = express.Router();
 
 const rescue = require('../utils/rescue');
 
-const { validationLogin } = require('../middlewares/validationLogin');
+const validation = require('../middlewares/validationSchema');
 const loginController = require('../controller/loginController');
 
 router.post(
   '/',
-  rescue(validationLogin),
+  rescue(validation.login),
   rescue(loginController.login),
 );
 

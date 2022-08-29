@@ -5,14 +5,14 @@ const router = express.Router();
 const rescue = require('../utils/rescue');
 
 const validateJWT = require('../middlewares/auth/validateJWT');
-const { validationCategory } = require('../middlewares/validationCategory');
+const validation = require('../middlewares/validationSchema');
 const categoryController = require('../controller/categoryController');
 
 router.use(validateJWT);
 
 router.post(
   '/',
-  rescue(validationCategory),
+  rescue(validation.category),
   rescue(categoryController.create),
 );
 router.get('/', categoryController.getAll);
