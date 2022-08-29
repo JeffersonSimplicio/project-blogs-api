@@ -49,10 +49,17 @@ async function remove(req, res) {
   res.status(204).end();
 }
 
+async function search(req, res) {
+  const { q: quest } = req.query;
+  const result = await postServices.search(quest);
+  res.status(200).json(result);
+}
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
   remove,
+  search,
 };

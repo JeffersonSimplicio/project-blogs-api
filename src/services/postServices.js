@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const { Op } = require('sequelize');
 const {
   BlogPost,
   PostCategory,
@@ -34,10 +35,7 @@ async function getAll() {
         as: 'user',
         attributes: { exclude: ['password'] },
       },
-      {
-        model: Category,
-        as: 'categories',
-      },
+      { model: Category, as: 'categories' },
     ],
   });
   return posts;
@@ -51,10 +49,7 @@ async function getById(id) {
         as: 'user',
         attributes: { exclude: ['password'] },
       },
-      {
-        model: Category,
-        as: 'categories',
-      },
+      { model: Category, as: 'categories' },
     ],
   });
   if (!post) {
@@ -67,12 +62,7 @@ async function update({ id, userId, title, content }) {
   const [rowsAffected] = await BlogPost.update({
     title, content,
   },
-  {
-    where: {
-      id,
-      userId,
-    },
-  });
+  { where: { id, userId } });
   if (!rowsAffected) {
     const result = await getById(id);
     if (result.message) return result;
@@ -84,10 +74,7 @@ async function update({ id, userId, title, content }) {
 
 async function remove(id, userId) {
   const rowsAffected = await BlogPost.destroy({
-    where: {
-      id,
-      userId,
-    },
+    where: { id, userId },
   });
   if (!rowsAffected) {
     const result = await getById(id);
@@ -97,10 +84,33 @@ async function remove(id, userId) {
   return rowsAffected;
 }
 
+async function search(quest) {
+  const posts = await BlogPost.findAll({
+    where: {
+      [Op.or]: [
+        { title: { [Op.like]: `%${quest}%` } },
+        { content: { [Op.like]: `%${quest}%` } },
+      ],
+    },
+    include: [
+      {
+        model: User,
+        as: 'user',
+        attributes: { exclude: ['password'] },
+      },
+      { model: Category, as: 'categories' },
+    ],
+  });
+  return posts;
+}
+
+// search('').then((test) => console.log(test));
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
   remove,
+  search,
 };

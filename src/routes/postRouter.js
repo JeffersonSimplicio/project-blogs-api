@@ -19,6 +19,7 @@ router.post(
 );
 
 router.get('/', rescue(postController.getAll));
+router.get('/search', rescue(postController.search));
 router.get('/:id', rescue(postController.getById));
 router.put(
   '/:id',
