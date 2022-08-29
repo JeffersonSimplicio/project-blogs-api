@@ -25,5 +25,6 @@ router.put(
   rescue(validation.editPost),
   rescue(postController.update),
 );
+router.delete('/:id', rescue(postController.remove));
 
 module.exports = router;
