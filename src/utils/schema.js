@@ -22,7 +22,7 @@ const schemaCategory = joi.object().keys({
 
 const missingField = 'Some required fields are missing';
 
-const schemaPost = joi.object().keys({
+const schemaNewPost = joi.object().keys({
   title: joi.string().required().messages({
     'any.required': missingField,
     'string.empty': missingField,
@@ -51,5 +51,5 @@ module.exports = {
   schemaLogin,
   schemaUser,
   schemaCategory,
-  schemaPost,
+  schemaNewPost,
 };
