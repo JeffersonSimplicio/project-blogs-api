@@ -5,7 +5,7 @@ const router = express.Router();
 const rescue = require('../utils/rescue');
 
 const validateJWT = require('../middlewares/auth/validateJWT');
-const validation = require('../middlewares/validationSchema');
+const validation = require('../middlewares/validationIndex');
 const categoryController = require('../controller/categoryController');
 
 router.use(validateJWT);

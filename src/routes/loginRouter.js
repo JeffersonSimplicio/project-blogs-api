@@ -4,7 +4,7 @@ const router = express.Router();
 
 const rescue = require('../utils/rescue');
 
-const validation = require('../middlewares/validationSchema');
+const validation = require('../middlewares/validationIndex');
 const loginController = require('../controller/loginController');
 
 router.post(

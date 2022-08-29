@@ -5,7 +5,7 @@ const router = express.Router();
 const rescue = require('../utils/rescue');
 
 const validateJWT = require('../middlewares/auth/validateJWT');
-const validation = require('../middlewares/validationSchema');
+const validation = require('../middlewares/validationIndex');
 const { categoryChecking } = require('../middlewares/categoryChecking');
 const postController = require('../controller/postCrontroller');
 
@@ -13,7 +13,7 @@ router.use(validateJWT);
 
 router.post(
   '/',
-  rescue(validation.newPost),
+  rescue(validation.createPost),
   rescue(categoryChecking),
   rescue(postController.create),
 );
