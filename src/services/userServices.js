@@ -32,8 +32,13 @@ async function getById(id) {
   return user;
 }
 
+async function removeMe(id) {
+  await User.destroy({ where: { id } });
+}
+
 module.exports = {
   create,
   getAll,
   getById,
+  removeMe,
 };
