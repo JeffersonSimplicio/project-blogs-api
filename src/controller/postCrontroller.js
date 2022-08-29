@@ -26,8 +26,21 @@ async function getById(req, res) {
   res.status(200).json(result);
 }
 
+async function update(req, res) {
+  const { id } = req.params;
+  const { title, content } = req.body;
+  const { user: { id: userId } } = res.locals;
+  const result = await postServices.update({ id, userId, title, content });
+  if (result.message) {
+    if (result.message.includes('user')) return res.status(401).json(result);
+    return res.status(404).json(result);
+  }
+  res.status(200).json(result);
+}
+
 module.exports = {
   create,
   getAll,
   getById,
+  update,
 };
