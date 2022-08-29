@@ -24,8 +24,15 @@ async function getById(req, res) {
   res.status(200).json(result);
 }
 
+async function removeMe(req, res) {
+  const { user: { id } } = res.locals;
+  await userService.removeMe(id);
+  res.status(204).end();
+}
+
 module.exports = {
   create,
   getAll,
   getById,
+  removeMe,
 };
