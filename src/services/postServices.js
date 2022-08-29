@@ -82,9 +82,25 @@ async function update({ id, userId, title, content }) {
   return post;
 }
 
+async function remove(id, userId) {
+  const rowsAffected = await BlogPost.destroy({
+    where: {
+      id,
+      userId,
+    },
+  });
+  if (!rowsAffected) {
+    const result = await getById(id);
+    if (result.message) return result;
+    return { message: 'Unauthorized user' };
+  }
+  return rowsAffected;
+}
+
 module.exports = {
   create,
   getAll,
   getById,
   update,
+  remove,
 };
