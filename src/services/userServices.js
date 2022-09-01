@@ -1,10 +1,17 @@
+const bcrypt = require('bcrypt');
 const tokenGenerator = require('../utils/tokenGenerator');
 const { User } = require('../database/models');
 
 async function create({ displayName, email, password, image }) {
+  const hashedPassword = await bcrypt.hash(password, 10);
+
   const [user, created] = await User.findOrCreate({
     where: { email },
-    defaults: { displayName, email, password, image },
+    defaults: {
+      displayName,
+      email,
+      password: hashedPassword,
+      image },
   });
 
   if (!created) {
