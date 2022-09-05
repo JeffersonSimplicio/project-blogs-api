@@ -13,7 +13,7 @@ async function login({ email, password }) {
 
   const token = tokenGenerator({ email: user.email, user: user.displayName });
 
-  return { token };
+  return { token, email: user.email, user: user.displayName, image: user.image };
 }
 
 module.exports = {
