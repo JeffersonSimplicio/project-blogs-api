@@ -8,7 +8,7 @@ const validateJWT = require('../middlewares/auth/validateJWT');
 const validation = require('../middlewares/validationIndex');
 const categoryController = require('../controller/categoryController');
 
-router.use(validateJWT);
+router.use(rescue(validateJWT));
 
 router.post(
   '/',

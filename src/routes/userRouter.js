@@ -14,7 +14,7 @@ router.post(
   rescue(userController.create),
 );
 
-router.use(validateJWT);
+router.use(rescue(validateJWT));
 
 router.get('/', userController.getAll);
 router.get('/:id', userController.getById);
