@@ -9,6 +9,18 @@ async function login(req, res) {
   res.status(200).json(result);
 }
 
+function reconnect(req, res) {
+  const { user: {
+    displayName: user,
+    email,
+    image,
+  } } = res.locals;
+  const token = req.headers.authorization;
+  const test = { user, email, image, token };
+  res.status(200).json(test);
+}
+
 module.exports = {
   login,
+  reconnect,
 };
