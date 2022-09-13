@@ -41,6 +41,6 @@ A API conta com camadas de segurança. Isso inclui o gerenciamento de token que 
   
 4. Inicie a aplicação
   ```
-    npm i
+    npm start
   ```
 </details>
