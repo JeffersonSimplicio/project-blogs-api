@@ -25,7 +25,7 @@ A API conta com camadas de segurança. Isso inclui o gerenciamento de token que 
 
 - Para rodar o projeto desta forma, obrigatoriamente você deve ter o `node` instalado em seu computador.
 - É necessário ter o MySQL sendo executado
-- Caso não possui o banco de dados criado ainda, user o comando `npm run create`
+- Caso não possua o banco de dados criado ainda, user o comando `npm run create`
 - ✨ **Dica:** Para povoar o banco de dados, execute o comando `npm run seed`
 
 1. Clone o projeto e entre no diretório
