@@ -6,10 +6,18 @@ Blog's API é um API Rest desenvolvida com uma arquitetura em camadas MSC (Model
 ### Esquema das tabelas
 ![image](./images/der.png)
 
-## Tecnologias e ferramentas
+## Tecnologias
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+
 O projeto foi desenvolvido em uma arquitetura em camadas **MSC** (Model-Service-Controller), faz uso de ORM, em especifico o framework **Sequelize**, responsável pela interação direta com banco de dados, consultas e manipulações. Sendo construída com o framework **Express** para estruturar endpoints e tratar erros. Usando os princípios dos **REST** para garantir qualidade e padrão do código, além de padronizar o formato que os dados seriam recebidos e retornados.
 
 A API conta com camadas de segurança. Isso inclui o gerenciamento de token que é feito por meio da lib **jsonwebtoken** (JWT), que gera e valida os tokens usados. As senhas dos usuários são salvas de forma criptografada no banco de dados, isso é feito pela lib **bcrypt**, que que criptografa a senha dos usuários e faz a validação, assim é nem mesmos quem possua acesso direto ao banco de dados conseguira ter acesso as senhas reais dos usuários.
+
+## Desenvolvimento
 
 ## Utilização
 
