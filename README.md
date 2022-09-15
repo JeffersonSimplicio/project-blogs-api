@@ -21,17 +21,7 @@ A API conta com camadas de segurança. Isso inclui o gerenciamento de token que 
 
 ## Utilização
 
-### Docker
-  - WIP...
-<!-- <details>
-  <summary>Clique para expandir!</summary>
-</details> -->
-
-### Localmente
-<details>
-  <summary>Clique para expandir!</summary>
-
-- Para rodar o projeto desta forma, obrigatoriamente você deve ter o `node` instalado em seu computador.
+- Para rodar a aplicação, obrigatoriamente você deve ter o `node` instalado em seu computador.
 - É necessário ter o MySQL sendo executado
 - Caso não possua o banco de dados criado ainda, user o comando `npm run create`
 - ✨ **Dica:** Para povoar o banco de dados, execute o comando `npm run seed`
@@ -51,4 +41,3 @@ A API conta com camadas de segurança. Isso inclui o gerenciamento de token que 
   ```
     npm start
   ```
-</details>
