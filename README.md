@@ -19,7 +19,13 @@ A API conta com camadas de segurança. Isso inclui o gerenciamento de token feit
 
 ## Desenvolvimento
 
-Para assegurar um ambiente isolado e seguro para o desenvolvimento e dos testes, foi usado o **Docker**. Os códigos foram escritas na ferramenta da Microsoft, **Visual Studio Code**. Durante a criação o **Nodemon** foi utilizado para rodar a execução, essa ferramenta tornou o desenvolvimento mais dinâmico, o monitoramento do comportamento da API foi feito com o **Insomnia**.
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Insomnia](https://img.shields.io/badge/Insomnia-black?style=for-the-badge&logo=insomnia&logoColor=5849BE)
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+
+Para assegurar um ambiente isolado e seguro para o desenvolvimento e dos testes, foi usado o **Docker**. Os códigos foram escritas na ferramenta da Microsoft, **Visual Studio Code**. Durante a criação o **Nodemon** foi utilizado para rodar a execução, essa ferramenta tornou o desenvolvimento mais dinâmico, o monitoramento do comportamento da API foi feito com o **Insomnia**. O desenvolvimento foi feito em uma maquina com Windows 11, rodando o Ubuntu 20.04 através do WSL2.
 
 ## Utilização
 
