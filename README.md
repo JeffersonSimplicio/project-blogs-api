@@ -27,23 +27,73 @@ Para assegurar um ambiente isolado e seguro para o desenvolvimento e dos testes,
 
 ## Utilização
 
+<details>
+  <summary><strong>💻 Localmente</strong></summary>
+
 - Para rodar a aplicação, obrigatoriamente você deve ter o `node` instalado em seu computador.
 - É necessário ter o MySQL sendo executado
-- Caso não possua o banco de dados criado ainda, user o comando `npm run create`
+- ✨ **Dica:** Caso não possua o banco de dados criado ainda, user o comando `npm run create`
 - ✨ **Dica:** Para povoar o banco de dados, execute o comando `npm run seed`
 
-1. Clone o projeto e entre no diretório
-  ```
-    git clone git@github.com:JeffersonSimplicio/project-blogs-api.git
-    cd project-blogs-api
-  ```
-2. Instale as dependências
+1. Clone o projeto para sua maquina
+```
+  git clone git@github.com:JeffersonSimplicio/project-blogs-api.git
+```
+
+2. Entre no diretório gerado  
+```
+  cd project-blogs-api
+```
+
+3. Instale as dependências
   ```
     npm i
   ```
-3. Renomeie o arquivo `.env.example` para `.env` e edite os dados para os da sua maquina
+4. Renomeie o arquivo `.env.example` para `.env` e edite os dados para os da sua maquina
   
-4. Inicie a aplicação
+5. Inicialize a aplicação
   ```
     npm start
   ```
+</details>
+
+<details>
+  <summary><strong>🐳 Docker</strong></summary>
+
+- Para rodar a aplicação com docker, é necessário ter instalando em sua maquina `Docker` e `Docker Compose`
+
+- ✨ **Dica:** Caso não possua o banco de dados criado ainda, user o comando `npm run create`
+- ✨ **Dica:** Para povoar o banco de dados, execute o comando `npm run seed`
+
+1. Clone o projeto para sua maquina
+```
+  git clone git@github.com:JeffersonSimplicio/project-blogs-api.git
+```
+
+2. Entre no diretório gerado  
+```
+  cd project-blogs-api
+```
+
+3. Suba o ambiente do docker
+  ```
+    docker-compose up -d --build
+  ```
+
+4. Acesse o terminal do contêiner
+  ```
+    docker exec -it blogs_api bash
+  ```
+
+5. Instale as dependências
+  ```
+    npm i
+  ```
+6. Renomeie o arquivo `.env.example` para `.env` e edite os dados para os da sua maquina
+  
+7. Inicialize a aplicação
+  ```
+    npm start
+  ```
+</details>
+
