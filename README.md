@@ -1,7 +1,7 @@
 <h1 align="center">BLOG'S API 💻</h1>
 
 ## Descrição
-Blog's API é um API Rest desenvolvida com uma arquitetura em camadas MSC (Model-Service-Controller), usando Sequilize ORM para mapear e manipular o banco de dados. Trata-se de um sistema para gerenciar um blog, fazendo o gerenciamento de usuários, posters e categorias. A API conta ainda com sistema de autenticação e criptografia de senha. Foi densenvonvolvida em agosto de 2022, durante o Modulo de Back-End da [Trybe](https://www.betrybe.com/).
+Blog's API é um API Rest desenvolvida com uma arquitetura em camadas MSC (Model-Service-Controller), usando Sequilize ORM para mapear e manipular o banco de dados. Trata-se de um sistema para gerenciar um blog, fazendo o gerenciamento de usuários, posters e categorias. A API conta ainda com sistema de autenticação e criptografia de senha. A aplicação foi desenvolvida em agosto de 2022, durante o Modulo de Back-End da [Trybe](https://www.betrybe.com/).
 
 ### Esquema das tabelas
 ![image](./images/der.png)
