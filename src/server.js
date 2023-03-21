@@ -3,7 +3,7 @@ const app = require('./api');
 const connectionCheck = require('./middlewares/connectionCheck');
 const nonExistentRoute = require('./middlewares/nonExistentRoute ');
 
-const port = Number(process.env.API_PORT) || 3001;
+const port = Number(process.env.API_PORT) || 3000;
 
 app.get('/', connectionCheck);
 
