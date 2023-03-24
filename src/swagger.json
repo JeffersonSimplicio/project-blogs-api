@@ -178,6 +178,52 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Usuário não criado, uma das características não esta de acordo comas exigências",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Lewis": {
+                    "description": "A mengassem informa qual motivo da falha",
+                    "value": {
+                      "message": "\"password\" length must be at least 6 characters long"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Usuário não criado, o usuário já existe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "examples": {
+                  "Lewis": {
+                    "description": "A mengassem informa qual motivo da falha",
+                    "value": {
+                      "message": "User already registered"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
